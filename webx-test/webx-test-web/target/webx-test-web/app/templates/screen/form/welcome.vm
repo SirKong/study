@@ -1,2 +1,0 @@
-$page.setTitle("Welcome, $name")
-<p>Welcome, $name!</p>
