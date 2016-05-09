@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="couchbase-test:war">
+    <output-path>$PROJECT_DIR$/couchbase-test/target</output-path>
+    <root id="archive" name="couchbase-test.war">
+      <element id="artifact" artifact-name="couchbase-test:war exploded" />
+    </root>
+  </artifact>
+</component>

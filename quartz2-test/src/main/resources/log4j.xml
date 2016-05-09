@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyyMMdd HHmmss}] [%-5p] %m @ %l %n" />
+		</layout>
+	</appender>
+	<appender name="server" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="logs/openapi.log" />
+		<param name="append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{yyyyMMdd HHmmss}] [%-5p] %m @ %l %n" />
+		</layout>
+	</appender>
+
+	<appender name="serverAsync" class="org.apache.log4j.AsyncAppender">
+		<param name="BufferSize" value="10240" />
+		<appender-ref ref="server" />
+	</appender>
+
+	<logger name="com.hundsun">
+		<!-- 开发模式下启用下面的配置 -->
+		<level value="DEBUG" />
+<!-- 		<appender-ref ref="provider" /> -->
+
+		<!-- 生产模式下启用下面的配置 -->
+		<!-- <level value="INFO"/> <appender-ref ref="serverAsync"/> -->
+	</logger>
+
+	<logger name="org.springframework">
+		<!-- 开发模式下启用下面的配置 -->
+		<level value="info" />
+	</logger>
+
+	<root>
+		<priority value="info" />
+		<appender-ref ref="console" />
+	</root>
+</log4j:configuration>

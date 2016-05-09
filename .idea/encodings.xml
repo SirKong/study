@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/couchbase-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hsf-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/netty-book" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/netty-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poi-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/protobuf-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quartz2-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/redis-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/validation-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webx-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webx-test/webx-test-biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webx-test/webx-test-dal" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/webx-test/webx-test-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zookeeper-test" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ccnu.test.webtest.dao.APIDao">
+
+	<insert id="insertAPIDescriptor" useGeneratedKeys="true" keyProperty="uuid">
+		insert into apidescriptor
+		(functionno,functiondesc,classname,url,version,createuser,createdate,lastupdatedate,lastupdateuser,updatelog)
+		values
+		({#functionno},{#functiondesc},{#classname},{#url},{#version},{#createuser},{#createdate},{#lastupdatedate},{#lastupdateuser},{#updatelog})
+	</insert>
+
+    <resultMap id="apiDescriptor" type="com.ccnu.test.webtest.model.APIDescriptor">
+        <association property="author" column="author_id" javaType="Author" select="selectAuthor"/>
+    </resultMap>
+
+</mapper>

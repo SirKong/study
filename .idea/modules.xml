@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/couchbase-test/couchbase-test.iml" filepath="$PROJECT_DIR$/couchbase-test/couchbase-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-test/dubbo-test.iml" filepath="$PROJECT_DIR$/dubbo-test/dubbo-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hsf-test/hsf-test.iml" filepath="$PROJECT_DIR$/hsf-test/hsf-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-test/java-test.iml" filepath="$PROJECT_DIR$/java-test/java-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-test/mybatis-test.iml" filepath="$PROJECT_DIR$/mybatis-test/mybatis-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty-book/netty-book.iml" filepath="$PROJECT_DIR$/netty-book/netty-book.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty-test/netty-test.iml" filepath="$PROJECT_DIR$/netty-test/netty-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poi-test/poi-test.iml" filepath="$PROJECT_DIR$/poi-test/poi-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/protobuf-test/protobuf-test.iml" filepath="$PROJECT_DIR$/protobuf-test/protobuf-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quartz2-test/quartz2-test.iml" filepath="$PROJECT_DIR$/quartz2-test/quartz2-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/redis-test/redis-test.iml" filepath="$PROJECT_DIR$/redis-test/redis-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-test/spring-test.iml" filepath="$PROJECT_DIR$/spring-test/spring-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-test/springboot-test.iml" filepath="$PROJECT_DIR$/springboot-test/springboot-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/study.iml" filepath="$PROJECT_DIR$/study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validation-test/validation-test.iml" filepath="$PROJECT_DIR$/validation-test/validation-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-test/web-test.iml" filepath="$PROJECT_DIR$/web-test/web-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webx-test/webx-test.iml" filepath="$PROJECT_DIR$/webx-test/webx-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webx-test/webx-test-biz/webx-test-biz.iml" filepath="$PROJECT_DIR$/webx-test/webx-test-biz/webx-test-biz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webx-test/webx-test-dal/webx-test-dal.iml" filepath="$PROJECT_DIR$/webx-test/webx-test-dal/webx-test-dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webx-test/webx-test-web/webx-test-web.iml" filepath="$PROJECT_DIR$/webx-test/webx-test-web/webx-test-web.iml" />
+    </modules>
+  </component>
+</project>

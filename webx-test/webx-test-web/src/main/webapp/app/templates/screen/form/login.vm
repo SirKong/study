@@ -1,0 +1,23 @@
+<form action="$appLink.setTarget("form/login")" method="post">
+    <input type="hidden" name="action" value="login_action"/>
+    #set ($group = $form.login.defaultInstance)
+    <p>登录</p>
+    #if($errorMsg) <p>$errorMsg</p> #end
+    <p>
+        <input type="text" name="$group.name.key" value="$!group.name.value"/>
+        #if (!$group.name.valid)
+            $group.name.message
+        #end
+    </p>
+
+    <p>
+        <input type="text" name="$group.passwd.key" value="$!group.passwd.value"/>
+        #if (!$group.passwd.valid)
+            $group.passwd.message
+        #end
+    </p>
+
+    <p>
+        <input type="submit" name="event_submit_do_check"/>
+    </p>
+</form>

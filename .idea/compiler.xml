@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="couchbase-test" />
+        <module name="dubbo-test" />
+        <module name="hsf-test" />
+        <module name="java-test" />
+        <module name="mybatis-test" />
+        <module name="netty-book" />
+        <module name="netty-test" />
+        <module name="poi-test" />
+        <module name="protobuf-test" />
+        <module name="quartz2" />
+        <module name="quartz2-test" />
+        <module name="redis-test" />
+        <module name="spring-test" />
+        <module name="springboot-test" />
+        <module name="validation-test" />
+        <module name="web-test" />
+        <module name="webx-test-biz" />
+        <module name="webx-test-dal" />
+        <module name="webx-test-web" />
+        <module name="zookeeper-test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="couchbase-test" target="1.7" />
+      <module name="ds-test" target="1.7" />
+      <module name="dubbo-test" target="1.7" />
+      <module name="java-test" target="1.7" />
+      <module name="mybatis-test" target="1.7" />
+      <module name="netty-book" target="1.7" />
+      <module name="netty-test" target="1.7" />
+      <module name="poi-test" target="1.7" />
+      <module name="protobuf-test" target="1.7" />
+      <module name="quartz2-test" target="1.7" />
+      <module name="redis-test" target="1.7" />
+      <module name="spring-test" target="1.7" />
+      <module name="springboot-test" target="1.6" />
+      <module name="study" target="1.7" />
+      <module name="validation-test" target="1.7" />
+      <module name="web-test" target="1.7" />
+      <module name="webx-test" target="1.6" />
+      <module name="webx-test-biz" target="1.6" />
+      <module name="webx-test-dal" target="1.6" />
+      <module name="webx-test-web" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

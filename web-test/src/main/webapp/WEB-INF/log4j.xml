@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] %m @ %l [%d{yyyy/MM/dd HH:mm:ss}] %n"/>
+        </layout>
+    </appender>
+    <appender name="server" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="file" value="logs/server.log"/>
+        <param name="append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%p] %m @ %c [%d{yyyy/MM/dd HH:mm:ss}] %n"/>
+        </layout>
+    </appender>
+
+    <appender name="serverAsync" class="org.apache.log4j.AsyncAppender">
+        <param name="BufferSize" value="10240" />
+        <appender-ref ref="server" />
+    </appender>
+
+    <logger name="com.ccnu">
+        <level value="DEBUG"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="server"/>
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="DEBUG"/>
+        <appender-ref ref="console"/>
+        <appender-ref ref="server"/>
+    </logger>
+
+    <root>
+        <priority value="DEBUG"/>
+    </root>
+</log4j:configuration>

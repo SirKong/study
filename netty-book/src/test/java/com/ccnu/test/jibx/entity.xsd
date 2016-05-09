@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hoo.com/entity" 
+elementFormDefault="qualified" targetNamespace="http://hoo.com/entity">
+  <xs:element type="tns:account" name="account"/>
+  <xs:complexType name="account">
+    <xs:sequence>
+      <xs:element type="xs:string" name="name" minOccurs="0"/>
+      <xs:element type="xs:string" name="email" minOccurs="0"/>
+      <xs:element type="xs:string" name="address" minOccurs="0"/>
+      <xs:element name="birthday" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element type="xs:string" name="birthday" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:int" use="required" name="id"/>
+  </xs:complexType>
+</xs:schema>

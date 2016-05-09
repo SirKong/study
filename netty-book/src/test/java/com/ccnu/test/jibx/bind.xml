@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding value-style="attribute">
+  <mapping class="com.hoo.entity.Account" name="account">
+    <value name="id" field="id"/>
+    <value style="element" name="name" field="name" usage="optional"/>
+    <value style="element" name="email" field="email" usage="optional"/>
+    <value style="element" name="address" field="address" usage="optional"/>
+    <structure field="birthday" usage="optional" name="birthday">
+      <value style="element" name="birthday" field="birthday" usage="optional"/>
+    </structure>
+  </mapping>
+</binding>

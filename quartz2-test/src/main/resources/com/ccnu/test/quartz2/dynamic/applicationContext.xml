@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" />
+
+       <bean id="printSysTimeJobDetail"
+             class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+              <property name="group" value="dynamicjob" />
+              <property name="name" value="printsystimejob" />
+              <property name="durability" value="true"></property>
+              <property name="jobClass"
+                        value="com.ccnu.test.quartz2.dynamic.PrintSysTimeJob" />
+              <property name="jobDataMap">
+                     <bean class="org.quartz.JobDataMap">
+                            <constructor-arg>
+                                   <map>
+                                          <entry key="taskEnable" value="1">
+                                          </entry>
+                                          <entry key="executeOnBootstrap" value="1">
+                                          </entry>
+                                   </map>
+                            </constructor-arg>
+
+                     </bean>
+              </property>
+       </bean>
+
+
+       <bean id="printSysTimeTrigger"
+             class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+              <property name="name" value="dsfundmarket" />
+              <property name="group" value="apigroup" />
+              <property name="jobDetail">
+                     <ref bean="printSysTimeJobDetail" />
+              </property>
+              <property name="cronExpression"
+                        value="0 0/5 8-23 * * ? *">
+              </property>
+       </bean>
+
+
+
+    <bean class="com.ccnu.test.quartz2.dynamic.SchedulerProcessor">
+        <property name="scheduler">
+            <ref bean="schedulerFactoryBean"></ref>
+        </property>
+        <property name="scheduleJobs">
+            <list>
+                <bean class="com.ccnu.test.quartz2.dynamic.ScheduleJob">
+                    <property name="bootOnStartup" value="true"></property>
+                    <property name="cronExpression" value="0 0/5 8-23 * * ? *"></property>
+                    <property name="enabled" value="true"></property>
+                    <property name="jobClass" value="com.ccnu.test.quartz2.dynamic.PrintSysTimeJob"></property>
+                    <property name="jobGroup" value="apigroup"></property>
+                    <property name="jobId" value="apigroup_printSysTimeJob"></property>
+                    <property name="jobName" value="printSysTimeJob"></property>
+                    <property name="jobDataMap">
+                        <map>
+                            <entry key="testkey" value="testvalue"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>
