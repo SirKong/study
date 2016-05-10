@@ -7,10 +7,9 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
 
-    <!-- 具体的实现bean -->
-    <bean id="helloWorldServiceImpl" class="com.ccnu.test.hsf.service.impl.HelloWorldServiceImpl" />
-
-    <bean id="helloWorldService" class="com.taobao.hsf.spring.util.HSFSpringProviderBean" init-method="init">
-
+    <bean id="helloWorldServiceCustomer" class="com.taobao.hsf.app.spring.util.HSFSpringConsumerBean"
+          init-method="init">
+        <property name="interfaceName" value="com.ccnu.test.hsf.service.HelloWorldService"/>
+        <property name="version" value="1.0.0.daily"/>
     </bean>
 </beans>
