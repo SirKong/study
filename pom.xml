@@ -14,21 +14,14 @@
     <module>quartz2-test</module>
     <module>web-test</module>
     <module>netty-book</module>
-    <module>test</module>
     <module>protobuf-test</module>
     <module>poi-test</module>
     <module>mybatis-test</module>
     <module>validation-test</module>
     <module>dubbo-test</module>
-    <module>ds-test</module>
     <module>springboot-test</module>
     <module>zookeeper-test</module>
-    <module>zookeeper-test</module>
-    <module>zookeeper-test</module>
-    <module>webx-test</module>
-    <module>hsf-test</module>
-    <module>hsf-test</module>
-    <module>webx-test</module>
+    <module>jpa-test</module>
   </modules>
   <packaging>pom</packaging>
 
