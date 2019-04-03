@@ -1,11 +1,17 @@
 package com.ccnu.test.redis;
 
-import redis.clients.jedis.*;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.JedisShardInfo;
+import redis.clients.jedis.ShardedJedis;
+import redis.clients.jedis.ShardedJedisPool;
+import redis.clients.jedis.SortingParams;
 
 public class AppTest {
     private static final String REDIS_HOST = "192.168.89.128";
@@ -16,7 +22,7 @@ public class AppTest {
     private ShardedJedis shardedJedis;//切片额客户端连接
     private ShardedJedisPool shardedJedisPool;//切片连接池
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new AppTest().Main();
     }
 
@@ -27,7 +33,6 @@ public class AppTest {
         jedis = jedisPool.getResource();
         shardedJedis = shardedJedisPool.getResource();
     }
-
 
 
     public void Main() {

@@ -15,10 +15,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class MainController {
 
     private static final Logger log = LoggerFactory.getLogger(MainController.class);
-	
+
     @RequestMapping("/main.do")
-    public ModelAndView doLogin(HttpServletRequest request){
-    	log.debug("进入到LoginController.doLogin方法");
+    public ModelAndView doLogin(HttpServletRequest request) {
+        log.debug("进入到LoginController.doLogin方法");
         return new ModelAndView("main");
     }
 

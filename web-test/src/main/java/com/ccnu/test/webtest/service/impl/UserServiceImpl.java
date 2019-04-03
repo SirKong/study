@@ -1,7 +1,8 @@
 package com.ccnu.test.webtest.service.impl;
 
-import com.ccnu.test.webtest.service.UserService;
 import org.springframework.stereotype.Service;
+
+import com.ccnu.test.webtest.service.UserService;
 
 /**
  * Created by gongyb08837 on 2016/1/25.

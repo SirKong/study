@@ -1,6 +1,6 @@
 package com.ccnu.test.jpa;
 
-import javax.persistence.*;
+import javax.persistence.Embeddable;
 
 @Embeddable
 public class Address {

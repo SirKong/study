@@ -8,17 +8,17 @@ import java.util.Date;
  */
 public class User implements Serializable {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = -2892289358484499459L;
-	private long id;
+     *
+     */
+    private static final long serialVersionUID = -2892289358484499459L;
+    private long id;
     private String name;
     private int age;
     private Date birthday;
 
     private static final String OBJECT_KEY = "User";
 
-    public User(){
+    public User() {
 
     }
 

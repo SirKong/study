@@ -12,60 +12,60 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class SimpleEntity {
 
-	@NotBlank(message="名字不能为空或者空串")
-	@Length(min=2,max=10,message="名字必须由2~10个字组成")
-	private String name;
-	
-	@Past(message="时间不能晚于当前时间")
-	private Date date;
-	
-	@Email(message="邮箱格式不正确")
-	private String email;
-	
-	@Pattern(regexp="(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{5,10}",message="密码必须是5~10位数字和字母的组合")
-	private String password;
-	
-	@AssertTrue(message="字段必须为真")
-	private boolean valid;
+    @NotBlank(message = "名字不能为空或者空串")
+    @Length(min = 2, max = 10, message = "名字必须由2~10个字组成")
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    @Past(message = "时间不能晚于当前时间")
+    private Date date;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    @Email(message = "邮箱格式不正确")
+    private String email;
 
-	public Date getDate() {
-		return date;
-	}
+    @Pattern(regexp = "(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{5,10}", message = "密码必须是5~10位数字和字母的组合")
+    private String password;
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    @AssertTrue(message = "字段必须为真")
+    private boolean valid;
 
-	public String getEmail() {
-		return email;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public Date getDate() {
+        return date;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
-	public boolean isValid() {
-		return valid;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setValid(boolean valid) {
-		this.valid = valid;
-	}
-	
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+
 }

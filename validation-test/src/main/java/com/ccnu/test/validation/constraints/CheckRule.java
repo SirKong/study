@@ -8,16 +8,16 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CheckRule {
-	Rule[] rules();
+    Rule[] rules();
 
-	/**
-	 * 
-	 */
-	public @interface Rule {
+    /**
+     *
+     */
+    public @interface Rule {
 
-		String exp();
+        String exp();
 
-		String message();
-	}
+        String message();
+    }
 
 }

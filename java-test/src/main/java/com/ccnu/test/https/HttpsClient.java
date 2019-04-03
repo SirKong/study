@@ -82,7 +82,7 @@ public class HttpsClient {
                 }
             };
 
-            sslContext.init(null, new TrustManager[] { tm }, null);
+            sslContext.init(null, new TrustManager[]{tm}, null);
         }
 
         @Override

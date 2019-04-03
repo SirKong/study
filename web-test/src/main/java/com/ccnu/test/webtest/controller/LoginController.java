@@ -22,14 +22,14 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping("/login.do")
-    public ModelAndView doLogin(HttpServletRequest request){
-    	log.debug("进入到LoginController.doLogin方法");
+    public ModelAndView doLogin(HttpServletRequest request) {
+        log.debug("进入到LoginController.doLogin方法");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        if(userService.loginCheck(username,password)) {
+        if (userService.loginCheck(username, password)) {
             return new ModelAndView("redirect:main.do");
-        }else{
+        } else {
             return new ModelAndView("error.jsp");
         }
     }

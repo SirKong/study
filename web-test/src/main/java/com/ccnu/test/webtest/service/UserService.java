@@ -8,9 +8,10 @@ public interface UserService {
 
     /**
      * 用户登录检查
+     *
      * @param username
      * @param password
      * @return
      */
-    boolean loginCheck(String username,String password);
+    boolean loginCheck(String username, String password);
 }

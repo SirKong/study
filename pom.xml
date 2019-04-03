@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ccnu.test</groupId>
@@ -11,7 +12,6 @@
         <module>netty-test</module>
         <module>spring-test</module>
         <module>java-test</module>
-        <module>couchbase-test</module>
         <module>quartz2-test</module>
         <module>web-test</module>
         <module>netty-book</module>
@@ -23,6 +23,7 @@
         <module>springboot-test</module>
         <module>zookeeper-test</module>
         <module>jpa-test</module>
+        <module>rxjava-test</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -31,7 +32,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <jdk.version>1.8</jdk.version>
     </properties>
 
     <dependencies>

@@ -21,8 +21,8 @@ public class Client {
         System.out.println("===flush DB before operations===");
 
         UserDao userDao = (UserDao) ac.getBean("userDao");
-        User user1 = new User(10,new Date(),1, "User 1");
-        User user2 = new User(20,new Date(),2, "User 2");
+        User user1 = new User(10, new Date(), 1, "User 1");
+        User user2 = new User(20, new Date(), 2, "User 2");
 
         System.out.println("==== getting objects from redis ====");
         System.out.println("User is not in redis yet: " + userDao.get(user1));

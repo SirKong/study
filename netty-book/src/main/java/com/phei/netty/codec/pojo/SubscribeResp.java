@@ -1,12 +1,12 @@
 /*
  * Copyright 2013-2018 Lilinfeng.
- *  
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *  
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,8 +19,8 @@ import java.io.Serializable;
 
 /**
  * @author Lilinfeng
- * @date 2014年2月23日
  * @version 1.0
+ * @date 2014年2月23日
  */
 public class SubscribeResp implements Serializable {
 
@@ -39,56 +39,53 @@ public class SubscribeResp implements Serializable {
      * @return the subReqID
      */
     public final int getSubReqID() {
-	return subReqID;
+        return subReqID;
     }
 
     /**
-     * @param subReqID
-     *            the subReqID to set
+     * @param subReqID the subReqID to set
      */
     public final void setSubReqID(int subReqID) {
-	this.subReqID = subReqID;
+        this.subReqID = subReqID;
     }
 
     /**
      * @return the respCode
      */
     public final int getRespCode() {
-	return respCode;
+        return respCode;
     }
 
     /**
-     * @param respCode
-     *            the respCode to set
+     * @param respCode the respCode to set
      */
     public final void setRespCode(int respCode) {
-	this.respCode = respCode;
+        this.respCode = respCode;
     }
 
     /**
      * @return the desc
      */
     public final String getDesc() {
-	return desc;
+        return desc;
     }
 
     /**
-     * @param desc
-     *            the desc to set
+     * @param desc the desc to set
      */
     public final void setDesc(String desc) {
-	this.desc = desc;
+        this.desc = desc;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-	return "SubscribeResp [subReqID=" + subReqID + ", respCode=" + respCode
-		+ ", desc=" + desc + "]";
+        return "SubscribeResp [subReqID=" + subReqID + ", respCode=" + respCode
+                + ", desc=" + desc + "]";
     }
 
 }

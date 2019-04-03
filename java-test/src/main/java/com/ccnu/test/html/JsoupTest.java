@@ -7,13 +7,13 @@ import org.jsoup.select.Elements;
 
 public class JsoupTest {
 
-	public static void main(String[] args) throws Exception {
-		Document doc = Jsoup.connect("http://www.baidu.com").get();
+    public static void main(String[] args) throws Exception {
+        Document doc = Jsoup.connect("http://www.baidu.com").get();
 
-		Elements imgTags = doc.getElementsByTag("img");
-		for (Element imgTag : imgTags) {
-			String src = imgTag.attr("src");
-			System.out.println(src);
-		}
-	}
+        Elements imgTags = doc.getElementsByTag("img");
+        for (Element imgTag : imgTags) {
+            String src = imgTag.attr("src");
+            System.out.println(src);
+        }
+    }
 }

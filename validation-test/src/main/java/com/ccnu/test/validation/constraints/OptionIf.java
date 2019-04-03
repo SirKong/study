@@ -8,12 +8,12 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface OptionIf {
-	OptionItem[] optionItems();
+    OptionItem[] optionItems();
 
-	public @interface OptionItem {
+    public @interface OptionItem {
 
-		String condition();
+        String condition();
 
-		String[] options();
-	}
+        String[] options();
+    }
 }

@@ -6,23 +6,41 @@ import java.util.Map;
  * Created by gongyb08837 on 2016/1/11.
  */
 public class ScheduleJob {
-    /** 任务id */
+    /**
+     * 任务id
+     */
     private String jobId;
-    /** 任务名称 */
+    /**
+     * 任务名称
+     */
     private String jobName;
-    /** 任务分组 */
+    /**
+     * 任务分组
+     */
     private String jobGroup;
-    /** 任务状态 0禁用 1启用 */
+    /**
+     * 任务状态 0禁用 1启用
+     */
     private boolean enabled;
-    /**是否启动即运行*/
+    /**
+     * 是否启动即运行
+     */
     private boolean bootOnStartup;
-    /** 任务运行时间表达式 */
+    /**
+     * 任务运行时间表达式
+     */
     private String cronExpression;
-    /**定时任务执行类*/
+    /**
+     * 定时任务执行类
+     */
     private Class<?> jobClass;
-    /**jobDataMap*/
-    private Map<String,?> jobDataMap;
-    /** 任务描述 */
+    /**
+     * jobDataMap
+     */
+    private Map<String, ?> jobDataMap;
+    /**
+     * 任务描述
+     */
     private String desc;
 
     public String getCronExpression() {
@@ -107,8 +125,8 @@ public class ScheduleJob {
                 ", enabled=" + enabled +
                 ", cronExpression='" + cronExpression + '\'' +
                 ", desc='" + desc + '\'' +
-                ", jobClass='"+jobClass+'\''+
-                ", jobDataMap='"+jobDataMap+'\''+
+                ", jobClass='" + jobClass + '\'' +
+                ", jobDataMap='" + jobDataMap + '\'' +
                 '}';
     }
 }

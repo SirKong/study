@@ -22,32 +22,32 @@ import io.netty.channel.ChannelHandlerContext;
 
 /**
  * @author lilinfeng
- * @date 2014年2月14日
  * @version 1.0
+ * @date 2014年2月14日
  */
 public class TimeServerHandler extends ChannelHandlerAdapter {
 
-	private int counter;
+    private int counter;
 
-	@Override
-	public void channelRead(ChannelHandlerContext ctx, Object msg)
-			throws Exception {
-		ByteBuf buf = (ByteBuf) msg;
-		byte[] req = new byte[buf.readableBytes()];
-		buf.readBytes(req);
-		String body = new String(req, "UTF-8").substring(0, req.length
-				- System.getProperty("line.separator").length());
-		System.out.println("The time provider receive order : " + body
-				+ " ; the counter is : " + ++counter);
-		String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new java.util.Date(
-				System.currentTimeMillis()).toString() : "BAD ORDER";
-		currentTime = currentTime + System.getProperty("line.separator");
-		ByteBuf resp = Unpooled.copiedBuffer(currentTime.getBytes());
-		ctx.writeAndFlush(resp);
-	}
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg)
+            throws Exception {
+        ByteBuf buf = (ByteBuf) msg;
+        byte[] req = new byte[buf.readableBytes()];
+        buf.readBytes(req);
+        String body = new String(req, "UTF-8").substring(0, req.length
+                - System.getProperty("line.separator").length());
+        System.out.println("The time provider receive order : " + body
+                + " ; the counter is : " + ++counter);
+        String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body) ? new java.util.Date(
+                System.currentTimeMillis()).toString() : "BAD ORDER";
+        currentTime = currentTime + System.getProperty("line.separator");
+        ByteBuf resp = Unpooled.copiedBuffer(currentTime.getBytes());
+        ctx.writeAndFlush(resp);
+    }
 
-	@Override
-	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-		ctx.close();
-	}
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        ctx.close();
+    }
 }

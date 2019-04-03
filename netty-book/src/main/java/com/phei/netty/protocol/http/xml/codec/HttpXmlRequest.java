@@ -1,12 +1,12 @@
 /*
  * Copyright 2013-2018 Lilinfeng.
- *  
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *  
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- *  
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,8 +19,8 @@ import io.netty.handler.codec.http.FullHttpRequest;
 
 /**
  * @author Lilinfeng
- * @date 2014年3月1日
  * @version 1.0
+ * @date 2014年3月1日
  */
 public class HttpXmlRequest {
 
@@ -28,47 +28,45 @@ public class HttpXmlRequest {
     private Object body;
 
     public HttpXmlRequest(FullHttpRequest request, Object body) {
-	this.request = request;
-	this.body = body;
+        this.request = request;
+        this.body = body;
     }
 
     /**
      * @return the request
      */
     public final FullHttpRequest getRequest() {
-	return request;
+        return request;
     }
 
     /**
-     * @param request
-     *            the request to set
+     * @param request the request to set
      */
     public final void setRequest(FullHttpRequest request) {
-	this.request = request;
+        this.request = request;
     }
 
     /**
      * @return the object
      */
     public final Object getBody() {
-	return body;
+        return body;
     }
 
     /**
-     * @param object
-     *            the object to set
+     * @param object the object to set
      */
     public final void setBody(Object body) {
-	this.body = body;
+        this.body = body;
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-	return "HttpXmlRequest [request=" + request + ", body =" + body + "]";
+        return "HttpXmlRequest [request=" + request + ", body =" + body + "]";
     }
 }

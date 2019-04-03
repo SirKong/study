@@ -15,15 +15,14 @@
  */
 package com.phei.netty.protocol.netty.codec;
 
-import io.netty.buffer.ByteBuf;
+import java.io.IOException;
+
 import org.jboss.marshalling.ByteOutput;
 
-import java.io.IOException;
+import io.netty.buffer.ByteBuf;
 
 /**
  * {@link ByteOutput} implementation which writes the data to a {@link ByteBuf}
- *
- *
  */
 class ChannelBufferByteOutput implements ByteOutput {
 
@@ -63,7 +62,6 @@ class ChannelBufferByteOutput implements ByteOutput {
 
     /**
      * Return the {@link ByteBuf} which contains the written content
-     *
      */
     ByteBuf getBuffer() {
         return buffer;

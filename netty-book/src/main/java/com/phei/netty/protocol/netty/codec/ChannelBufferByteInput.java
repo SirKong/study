@@ -15,10 +15,11 @@
  */
 package com.phei.netty.protocol.netty.codec;
 
-import io.netty.buffer.ByteBuf;
+import java.io.IOException;
+
 import org.jboss.marshalling.ByteInput;
 
-import java.io.IOException;
+import io.netty.buffer.ByteBuf;
 
 /**
  * {@link ByteInput} implementation which reads its data from a {@link ByteBuf}

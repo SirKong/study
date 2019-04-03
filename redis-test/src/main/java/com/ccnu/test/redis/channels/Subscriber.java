@@ -2,6 +2,7 @@ package com.ccnu.test.redis.channels;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import redis.clients.jedis.JedisPubSub;
 
 public class Subscriber extends JedisPubSub {

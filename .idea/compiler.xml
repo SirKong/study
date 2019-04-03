@@ -44,27 +44,27 @@
         <module name="zookeeper-test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7">
-      <module name="couchbase-test" target="1.7" />
-      <module name="ds-test" target="1.7" />
-      <module name="dubbo-test" target="1.7" />
-      <module name="java-test" target="1.7" />
-      <module name="mybatis-test" target="1.7" />
-      <module name="netty-book" target="1.7" />
-      <module name="netty-test" target="1.7" />
-      <module name="poi-test" target="1.7" />
-      <module name="protobuf-test" target="1.7" />
-      <module name="quartz2-test" target="1.7" />
-      <module name="redis-test" target="1.7" />
-      <module name="spring-test" target="1.7" />
-      <module name="springboot-test" target="1.6" />
-      <module name="study" target="1.7" />
-      <module name="validation-test" target="1.7" />
-      <module name="web-test" target="1.7" />
-      <module name="webx-test" target="1.6" />
-      <module name="webx-test-biz" target="1.6" />
-      <module name="webx-test-dal" target="1.6" />
-      <module name="webx-test-web" target="1.6" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="couchbase-test" target="1.8" />
+      <module name="ds-test" target="1.8" />
+      <module name="dubbo-test" target="1.8" />
+      <module name="java-test" target="1.8" />
+      <module name="mybatis-test" target="1.8" />
+      <module name="netty-book" target="1.8" />
+      <module name="netty-test" target="1.8" />
+      <module name="poi-test" target="1.8" />
+      <module name="protobuf-test" target="1.8" />
+      <module name="quartz2-test" target="1.8" />
+      <module name="redis-test" target="1.8" />
+      <module name="spring-test" target="1.8" />
+      <module name="springboot-test" target="1.8" />
+      <module name="study" target="1.8" />
+      <module name="validation-test" target="1.8" />
+      <module name="web-test" target="1.8" />
+      <module name="webx-test" target="1.8" />
+      <module name="webx-test-biz" target="1.8" />
+      <module name="webx-test-dal" target="1.8" />
+      <module name="webx-test-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

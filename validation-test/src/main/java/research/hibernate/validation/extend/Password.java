@@ -12,13 +12,13 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-@Target( { METHOD, FIELD, ANNOTATION_TYPE })
+@Target({METHOD, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
 @Constraint(validatedBy = PasswordValidator.class)
 @Documented
 public @interface Password {
 
-	String message() default "{密码必须是5~10位数字和字母组合}";
+    String message() default "{密码必须是5~10位数字和字母组合}";
 
     Class<?>[] groups() default {};
 

@@ -29,10 +29,10 @@ public class SchedulerProcessor extends AbstractProcessor {
     private List<ScheduleJob> scheduleJobs;
 
     @Override
-    protected void execute(ApplicationContext applicationContext) throws Exception{
+    protected void execute(ApplicationContext applicationContext) throws Exception {
         //schedulerFactoryBean 由spring创建注入
         for (ScheduleJob job : scheduleJobs) {
-            if(!job.isEnabled()){
+            if (!job.isEnabled()) {
                 continue;
             }
             TriggerKey triggerKey = TriggerKey.triggerKey(job.getJobName(), job.getJobGroup());
@@ -42,12 +42,12 @@ public class SchedulerProcessor extends AbstractProcessor {
             if (null == trigger) {
                 JobDetail jobDetail = JobBuilder.newJob()
                         .withIdentity(job.getJobName(), job.getJobGroup()).build();
-                if(!CollectionUtils.isEmpty(job.getJobDataMap())){
-                    Map<String,?> jobDataMap = job.getJobDataMap();
+                if (!CollectionUtils.isEmpty(job.getJobDataMap())) {
+                    Map<String, ?> jobDataMap = job.getJobDataMap();
                     Iterator<String> it = jobDataMap.keySet().iterator();
-                    while(it.hasNext()) {
+                    while (it.hasNext()) {
                         String key = it.next();
-                        jobDetail.getJobDataMap().put(key,jobDataMap.get(key));
+                        jobDetail.getJobDataMap().put(key, jobDataMap.get(key));
                     }
                 }
                 //表达式调度构建器
@@ -67,43 +67,43 @@ public class SchedulerProcessor extends AbstractProcessor {
                 //按新的trigger重新设置job执行
                 scheduler.rescheduleJob(triggerKey, trigger);
             }
-            if(job.isBootOnStartup()){
+            if (job.isBootOnStartup()) {
                 JobKey jobKey = JobKey.jobKey(job.getJobName(), job.getJobGroup());
                 scheduler.triggerJob(jobKey);
             }
         }
     }
 
-    public static void pauseJob(JobKey jobKey){
-        try{
+    public static void pauseJob(JobKey jobKey) {
+        try {
             scheduler.pauseJob(jobKey);
-        }catch (SchedulerException e){
-            log.error(String.format("暂停定时任务[%s]失败！",jobKey));
+        } catch (SchedulerException e) {
+            log.error(String.format("暂停定时任务[%s]失败！", jobKey));
         }
     }
 
-    public static void resumeJob(JobKey jobKey){
-        try{
+    public static void resumeJob(JobKey jobKey) {
+        try {
             scheduler.resumeJob(jobKey);
-        }catch (SchedulerException e){
-            log.error(String.format("恢复定时任务[%s]失败！",jobKey));
+        } catch (SchedulerException e) {
+            log.error(String.format("恢复定时任务[%s]失败！", jobKey));
         }
     }
 
 
-    public static void deleteJob(JobKey jobKey){
-        try{
+    public static void deleteJob(JobKey jobKey) {
+        try {
             scheduler.deleteJob(jobKey);
-        }catch (SchedulerException e){
-            log.error(String.format("删除定时任务[%s]失败！",jobKey));
+        } catch (SchedulerException e) {
+            log.error(String.format("删除定时任务[%s]失败！", jobKey));
         }
     }
 
-    public static void triggerJob(JobKey jobKey){
-        try{
+    public static void triggerJob(JobKey jobKey) {
+        try {
             scheduler.triggerJob(jobKey);
-        }catch (SchedulerException e){
-            log.error(String.format("立即触发执行定时任务[%s]失败！",jobKey));
+        } catch (SchedulerException e) {
+            log.error(String.format("立即触发执行定时任务[%s]失败！", jobKey));
         }
     }
 

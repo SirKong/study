@@ -9,9 +9,9 @@ import org.springframework.expression.spel.support.StandardEvaluationContext;
  * Created by gongyb08837 on 2016/1/27.
  */
 public class SpelTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ExpressionParser parser = new SpelExpressionParser();
-        EvaluationContext context = new StandardEvaluationContext(new Test(20,"我叫小明，今年20岁"));
+        EvaluationContext context = new StandardEvaluationContext(new Test(20, "我叫小明，今年20岁"));
 
         String result1 = parser.parseExpression("getName().charAt(1)").getValue(context, String.class);
 
@@ -19,7 +19,7 @@ public class SpelTest {
     }
 }
 
-class Test{
+class Test {
     private String name;
     private int age;
 

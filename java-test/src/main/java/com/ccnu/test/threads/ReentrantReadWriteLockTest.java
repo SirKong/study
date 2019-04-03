@@ -7,98 +7,98 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReentrantReadWriteLockTest {
 
-	public static void main(String[] args) {
-		// 创建并发访问的账户
-		MyCount myCount = new MyCount("95599200901215522", 10000);
-		// 创建一个锁对象
-		ReadWriteLock lock = new ReentrantReadWriteLock(false);
-		// 创建一个线程池
-		ExecutorService pool = Executors.newFixedThreadPool(2);
-		// 创建一些并发访问用户，一个信用卡，存的存，取的取，好热闹啊
-		UserB u1 = new UserB("张三", myCount, -4000, lock, false);
-		UserB u2 = new UserB("张三他爹", myCount, 6000, lock, false);
-		UserB u3 = new UserB("张三他弟", myCount, -8000, lock, false);
-		UserB u4 = new UserB("张三", myCount, 800, lock, false);
-		UserB u5 = new UserB("张三他爹", myCount, 0, lock, true);
-		// 在线程池中执行各个用户的操作
-		pool.execute(u1);
-		pool.execute(u2);
-		pool.execute(u3);
-		pool.execute(u4);
-		pool.execute(u5);
-		// 关闭线程池
-		pool.shutdown();
-	}
+    public static void main(String[] args) {
+        // 创建并发访问的账户
+        MyCount myCount = new MyCount("95599200901215522", 10000);
+        // 创建一个锁对象
+        ReadWriteLock lock = new ReentrantReadWriteLock(false);
+        // 创建一个线程池
+        ExecutorService pool = Executors.newFixedThreadPool(2);
+        // 创建一些并发访问用户，一个信用卡，存的存，取的取，好热闹啊
+        UserB u1 = new UserB("张三", myCount, -4000, lock, false);
+        UserB u2 = new UserB("张三他爹", myCount, 6000, lock, false);
+        UserB u3 = new UserB("张三他弟", myCount, -8000, lock, false);
+        UserB u4 = new UserB("张三", myCount, 800, lock, false);
+        UserB u5 = new UserB("张三他爹", myCount, 0, lock, true);
+        // 在线程池中执行各个用户的操作
+        pool.execute(u1);
+        pool.execute(u2);
+        pool.execute(u3);
+        pool.execute(u4);
+        pool.execute(u5);
+        // 关闭线程池
+        pool.shutdown();
+    }
 }
 
 /**
  * 信用卡的用户
  */
 class UserB implements Runnable {
-	private String name; // 用户名
-	private MyCount myCount; // 所要操作的账户
-	private int iocash; // 操作的金额，当然有正负之分了
-	private ReadWriteLock myLock; // 执行操作所需的锁对象
-	private boolean ischeck; // 是否查询
+    private String name; // 用户名
+    private MyCount myCount; // 所要操作的账户
+    private int iocash; // 操作的金额，当然有正负之分了
+    private ReadWriteLock myLock; // 执行操作所需的锁对象
+    private boolean ischeck; // 是否查询
 
-	UserB(String name, MyCount myCount, int iocash, ReadWriteLock myLock, boolean ischeck) {
-		this.name = name;
-		this.myCount = myCount;
-		this.iocash = iocash;
-		this.myLock = myLock;
-		this.ischeck = ischeck;
-	}
+    UserB(String name, MyCount myCount, int iocash, ReadWriteLock myLock, boolean ischeck) {
+        this.name = name;
+        this.myCount = myCount;
+        this.iocash = iocash;
+        this.myLock = myLock;
+        this.ischeck = ischeck;
+    }
 
-	public void run() {
-		if (ischeck) {
-			// 获取读锁
-			myLock.readLock().lock();
-			System.out.println("读：" + name + "正在查询" + myCount + "账户，当前金额为" + myCount.getCash());
-			// 释放读锁
-			myLock.readLock().unlock();
-		} else {
-			// 获取写锁
-			myLock.writeLock().lock();
-			// 执行现金业务
-			System.out.println("写：" + name + "正在操作" + myCount + "账户，金额为" + iocash + "，当前金额为" + myCount.getCash());
-			myCount.setCash(myCount.getCash() + iocash);
-			System.out.println("写：" + name + "操作" + myCount + "账户成功，金额为" + iocash + "，当前金额为" + myCount.getCash());
-			// 释放写锁
-			myLock.writeLock().unlock();
-		}
-	}
+    public void run() {
+        if (ischeck) {
+            // 获取读锁
+            myLock.readLock().lock();
+            System.out.println("读：" + name + "正在查询" + myCount + "账户，当前金额为" + myCount.getCash());
+            // 释放读锁
+            myLock.readLock().unlock();
+        } else {
+            // 获取写锁
+            myLock.writeLock().lock();
+            // 执行现金业务
+            System.out.println("写：" + name + "正在操作" + myCount + "账户，金额为" + iocash + "，当前金额为" + myCount.getCash());
+            myCount.setCash(myCount.getCash() + iocash);
+            System.out.println("写：" + name + "操作" + myCount + "账户成功，金额为" + iocash + "，当前金额为" + myCount.getCash());
+            // 释放写锁
+            myLock.writeLock().unlock();
+        }
+    }
 }
 
 /**
  * 信用卡账户，可随意透支
  */
 class MyCountB {
-	private String oid; // 账号
-	private int cash; // 账户余额
+    private String oid; // 账号
+    private int cash; // 账户余额
 
-	MyCountB(String oid, int cash) {
-		this.oid = oid;
-		this.cash = cash;
-	}
+    MyCountB(String oid, int cash) {
+        this.oid = oid;
+        this.cash = cash;
+    }
 
-	public String getOid() {
-		return oid;
-	}
+    public String getOid() {
+        return oid;
+    }
 
-	public void setOid(String oid) {
-		this.oid = oid;
-	}
+    public void setOid(String oid) {
+        this.oid = oid;
+    }
 
-	public int getCash() {
-		return cash;
-	}
+    public int getCash() {
+        return cash;
+    }
 
-	public void setCash(int cash) {
-		this.cash = cash;
-	}
+    public void setCash(int cash) {
+        this.cash = cash;
+    }
 
-	@Override
-	public String toString() {
-		return "MyCount{" + "oid='" + oid + '\'' + ", cash=" + cash + '}';
-	}
+    @Override
+    public String toString() {
+        return "MyCount{" + "oid='" + oid + '\'' + ", cash=" + cash + '}';
+    }
 }
